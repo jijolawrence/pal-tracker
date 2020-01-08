@@ -20,6 +20,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'mysql:mysql-connector-java'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
@@ -37,7 +38,11 @@ bootRun.environment([
         "WELCOME_MESSAGE": "hello Boot run",
         "SPRING_DATASOURCE_URL": developmentDbUrl,
         "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*",
+<<<<<<< HEAD
         "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always",
+=======
+        "MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS": "always"
+>>>>>>> 524c5a2... Add actuator endpoints
 ])
 
 def testDbUrl = "jdbc:mysql://localhost:3306/tracker_test?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
@@ -45,7 +50,11 @@ test.environment([
         "WELCOME_MESSAGE": "Hello from test",
         "SPRING_DATASOURCE_URL": testDbUrl,
         "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*",
+<<<<<<< HEAD
         "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always",
+=======
+        "MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS": "always"
+>>>>>>> 524c5a2... Add actuator endpoints
 ])
 
 flyway {

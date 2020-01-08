@@ -14,11 +14,16 @@ import java.util.List;
 public class TimeEntryController {
 
     private TimeEntryRepository timeEntriesRepo;
+    private final DistributionSummary timeEntrySummary;
+    private final Counter actionCounter;
 
+<<<<<<< HEAD
     private final DistributionSummary timeEntrySummary;
     private final Counter actionCounter;
 
 
+=======
+>>>>>>> 524c5a2... Add actuator endpoints
     public TimeEntryController(
             TimeEntryRepository timeEntriesRepo,
             MeterRegistry meterRegistry
@@ -35,6 +40,10 @@ public class TimeEntryController {
         TimeEntry createdTimeEntry = timeEntriesRepo.create(timeEntry);
         actionCounter.increment();
         timeEntrySummary.record(timeEntriesRepo.list().size());
+<<<<<<< HEAD
+=======
+
+>>>>>>> 524c5a2... Add actuator endpoints
         return new ResponseEntity<>(createdTimeEntry, HttpStatus.CREATED);
     }
 
@@ -71,6 +80,11 @@ public class TimeEntryController {
         timeEntriesRepo.delete(id);
         actionCounter.increment();
         timeEntrySummary.record(timeEntriesRepo.list().size());
+<<<<<<< HEAD
+=======
+
+>>>>>>> 524c5a2... Add actuator endpoints
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }
+
