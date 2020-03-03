@@ -18,21 +18,11 @@ public class TimeEntryHealthIndicator implements HealthIndicator {
     public Health health() {
         Health.Builder builder = new Health.Builder();
 
-<<<<<<< HEAD
         if (timeEntryRepo.list().size() < MAX_TIME_ENTRIES) {
-=======
-        if(timeEntryRepo.list().size() < MAX_TIME_ENTRIES) {
->>>>>>> 524c5a2... Add actuator endpoints
             builder.up();
         } else {
             builder.down();
         }
-
         return builder.build();
     }
-<<<<<<< HEAD
-
 }
-=======
-}
->>>>>>> 524c5a2... Add actuator endpoints
